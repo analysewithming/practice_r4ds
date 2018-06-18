@@ -78,11 +78,11 @@ year(d6)
 day(d6)
 mday(d6)
 yday(d6)
-wday(d6)
+wday(d6, label = T, abbr = F)
 
-month(d6)
+month(d6, label = TRUE, abbr = F)
 
-# ----
+# ---- Duration
 d6 <- now()
 dseconds(15)
 dminutes(15)
@@ -91,6 +91,42 @@ ddays(1)
 dweeks(1)
 dyears(1)
 
+# ---- Period
+seconds(15)
+minutes(15)
+hours(24)
+days(30)
+weeks(7)
+months(2, abbreviate = FALSE)
+years(2)
+
+# ---- Interval
+next_year <- today() + years(1)
+interval <- today() %--% next_year
+interval %/% 
+
+i <- 0
+v <- c(ymd(20180101))
+
+makeV <- function(){
+  for(i in 1:12){
+    # v[i] <- make_date(year=2015,month=i,day=1)
+    v[i] <- i
+  }
+}
+
+for(i in 1:12){
+  v[i] <- make_date(year=2018,month=i,day=1)
+}
+
+age <- 0
+mbd <- function(date){
+  age <- today() - date
+  return(age)
+}
+
+mbd(ymd(19800313))
+age
 
 
 
