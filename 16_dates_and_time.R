@@ -121,12 +121,10 @@ for(i in 1:12){
 
 age <- 0
 mbd <- function(date){
-  age <- today() - date
-  return(age)
+  age <- (today() - date) %/% ddays(365)
 }
 
-mbd(ymd(19800313))
-age
+age <- mbd(ymd(19850629))
 
 
 
