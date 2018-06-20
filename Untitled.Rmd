@@ -49,6 +49,12 @@ Jump to [Header1](#aa1)
   + subitem
     - sub-sub
 
+knitr::kable(
+  mtcars[1:5, ], 
+  caption = "A knitr kable."
+)
+```
+
 
     
         
